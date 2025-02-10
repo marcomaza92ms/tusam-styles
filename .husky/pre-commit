@@ -1,0 +1,24 @@
+echo "🔍 Running test..."
+if npm run test; then
+  echo "✅ Test passed!"
+else
+  echo "❌ Test failed!"
+  exit 1
+fi
+
+# run typecheck
+echo "🔍 Running typecheck..."
+if npm run typecheck; then
+  echo "✅ Typecheck passed!"
+else
+  echo "❌ Typecheck failed!"
+  exit 1
+fi
+
+echo "🔍 Running lint-staged..."
+if npx lint-staged; then
+  echo "✅ lint-staged passed!"
+else
+  echo "❌ lint-staged failed!"
+  exit 1
+fi

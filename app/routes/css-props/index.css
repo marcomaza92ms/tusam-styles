@@ -1,0 +1,25 @@
+/* CSS Properties */
+
+/* @property --some-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: rebeccapurple;
+} */
+
+:root {
+  --font-color: yellow;
+  --some-color: rebeccapurple;
+  /* --some-color: url("eee-eee-eee"); */
+}
+
+.my-precious-div {
+  background: var(--some-color);
+  /* background: linear-gradient(var(--some-color), darkgray);
+  transition: background 1s ease-in-out; */
+  color: var(--font-color);
+
+  /* &:hover {
+    --some-color: darkblue;
+    background: linear-gradient(var(--some-color), darkgray);
+  } */
+}

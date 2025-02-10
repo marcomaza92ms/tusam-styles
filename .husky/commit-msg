@@ -1,0 +1,39 @@
+# Function to validate the commit message
+validate_commit_message() {
+  local commit_msg=$1
+
+  # Allow merge commit messages
+  if echo "$commit_msg" | grep -E '^Merge .+' >/dev/null; then
+    return 0
+  fi
+
+  # Regular expression to validate the format "type(number): message"
+  # or "type(no-ticket): message"
+  if ! echo "$commit_msg" | grep -E '^(feat|fix|docs|style|refactor|test|chore)\(([0-9]+|no-ticket)\): .+' >/dev/null; then
+    echo ""
+    echo "❌ Invalid commit message format or convention!"
+    echo "❗️ Please follow the format: <type>(number|no-ticket): message"
+    echo "   - <type>: One of [feat, fix, docs, style, refactor, test, chore]"
+    echo "   - <number>: Issue number associated with the commit or 'no-ticket' if no issue"
+    echo "   - <message>: Concise description of the change"
+    echo ""
+    echo "❌ Commit message is invalid!"
+    echo "❗️ Please follow the conventional commit guidelines:"
+    echo "   - ✨ feat: A new feature"
+    echo "   - 🐛 fix: A bug fix"
+    echo "   - 📚 docs: Documentation only changes"
+    echo "   - 🎨 style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)"
+    echo "   - ♻️ refactor: A code change that neither fixes a bug nor adds a feature"
+    echo "   - 🧪 test: Adding missing tests or correcting existing tests"
+    echo "   - 🛠 chore: Changes to the build process or auxiliary tools and libraries such as documentation generation"
+    exit 1
+  fi
+}
+
+# Read commit message from the file passed as argument
+commit_msg=$(cat "$1")
+
+# Validate commit message format and convention
+validate_commit_message "$commit_msg"
+echo "🤓 Validating commit message..."
+echo "✅ Commit message format and convention are valid!"

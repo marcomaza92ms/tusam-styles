@@ -1,0 +1,8 @@
+echo "🔍 Running tests before push..."
+if npm run test; then
+  echo "✅ Tests passed! Proceeding with push... 🚀"
+else
+  echo "❌ Tests failed! Push aborted."
+  echo "❗️ Please fix the test errors before pushing your changes."
+  exit 1
+fi
