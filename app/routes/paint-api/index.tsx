@@ -12,7 +12,7 @@ export default function PaintAPI() {
     if (CSS && CSS.paintWorklet) {
       // @ts-expect-error: CSS.layoutWorklet is not defined in TypeScript types
       CSS.paintWorklet.addModule("/worklets/paint/border-worklet.js");
-      // @ts-expect-error: CSS.layoutWorklet is not defined in TypeScript types
+      // @ts-expect-error: CSS.layoutWorklet is not defined in TypeScript typess
       CSS.paintWorklet.addModule("/worklets/paint/mondrian-worklet.js");
     }
   }, [location]);

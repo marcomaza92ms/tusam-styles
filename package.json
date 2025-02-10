@@ -17,6 +17,7 @@
   "dependencies": {
     "@react-router/fs-routes": "^7.1.3",
     "@react-router/node": "^7.0.0",
+    "css-houdini-mondrian": "^0.0.1",
     "isbot": "^5",
     "react": "19.0.0",
     "react-dom": "19.0.0",

@@ -14,6 +14,9 @@ importers:
       '@react-router/node':
         specifier: ^7.0.0
         version: 7.1.5(react-router@7.1.5(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(typescript@5.7.3)
+      css-houdini-mondrian:
+        specifier: ^0.0.1
+        version: 0.0.1
       isbot:
         specifier: ^5
         version: 5.1.22
@@ -1724,6 +1727,9 @@ packages:
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
+
+  css-houdini-mondrian@0.0.1:
+    resolution: {integrity: sha512-m+A/B/ze1TY9mdsFPlKyfLkbYwD00XEtPApKpeFOUm7PNaCszuBqka6LnFWm4AHHb6ZVX1NfEdE9l5LmvcFJRA==}
 
   css.escape@1.5.1:
     resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
@@ -5636,6 +5642,8 @@ snapshots:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  css-houdini-mondrian@0.0.1: {}
 
   css.escape@1.5.1: {}
 
