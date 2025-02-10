@@ -1,0 +1,15 @@
+/* Layout API */
+
+.my-precious-div {
+  display: layout(centering);
+  width: 200px;
+  height: 200px;
+  background: darkred;
+}
+
+.my-precious-layout {
+  display: layout(masonry);
+  width: 500px;
+  --columns: 4;
+  --gap: 20;
+}

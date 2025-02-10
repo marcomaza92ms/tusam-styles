@@ -1,12 +1,12 @@
-/* Typed OM */
+/* Paint API */
 
 /* :root {
   --some-color: ;
 } */
 
 .my-precious-div {
-  --some-color: darkblue;
-  width: var(--custom-width, 200px);
+  --some-color: darkred;
+  width: 200px;
   height: 200px;
   background: var(--some-color);
 }

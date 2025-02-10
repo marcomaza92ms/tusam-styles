@@ -1,8 +1,8 @@
+import { useEffect, useRef } from "react";
 import { Footer } from "~/components/footer/footer";
 import { Navbar } from "~/components/navbar/navbar";
 
 import "./index.css";
-import { useEffect, useRef } from "react";
 
 export default function TypedOM() {
   const elementRef = useRef<HTMLDivElement>(null);
