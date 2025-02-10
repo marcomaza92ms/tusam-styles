@@ -1,12 +1,59 @@
 /* Paint API */
 
-/* :root {
-  --some-color: ;
-} */
-
 .my-precious-div {
+  --border-radius-reverse: 10;
   --some-color: darkred;
   width: 200px;
   height: 200px;
   background: var(--some-color);
+  border: calc(var(--border-radius-reverse) * 1px) solid transparent;
+  border-image: url("https://cataas.com/cat");
+  border-image-slice: var(--border-radius-reverse);
+}
+
+@supports (border-image: paint(border-radius-reverse)) {
+  .my-precious-div {
+    --border-radius-reverse: 20;
+    --border-radius-reverse-color: darkorange;
+    border-image: paint(border-radius-reverse);
+    border-image-slice: var(--border-radius-reverse);
+  }
+}
+
+@property --cell-count {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --border-width {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+.my-mondrian {
+  background: green;
+  --cell-count: 0;
+  --border-width: 0;
+  width: 500px;
+  height: 500px;
+  /* animation: growth 20s linear infinite; */
+}
+
+@supports (background: paint(mondrian)) {
+  .my-mondrian {
+    background: paint(mondrian);
+  }
+}
+
+@keyframes growth {
+  0%,
+  100% {
+    --cell-count: 0;
+    --border-width: 0;
+  }
+  50% {
+    --cell-count: 50;
+  }
 }

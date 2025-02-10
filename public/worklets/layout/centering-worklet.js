@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 registerLayout(
   "centering",
   class {
@@ -5,7 +6,7 @@ registerLayout(
       return [[200, 200]];
     }
 
-    async layout(children, edges, constraints, styleMap) {
+    async layout(children, edges, constraints) {
       const availableInlineSize = constraints.fixedInlineSize - edges.inline;
       const availableBlockSize = constraints.fixedBlockSize
         ? constraints.fixedBlockSize - edges.block

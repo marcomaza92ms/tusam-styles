@@ -7,9 +7,9 @@
   background: darkred;
 }
 
-.my-precious-layout {
+.my-precious-masonry {
   display: layout(masonry);
-  width: 500px;
+  width: 960px;
   --columns: 4;
   --gap: 20;
 }

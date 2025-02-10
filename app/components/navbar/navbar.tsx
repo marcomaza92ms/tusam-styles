@@ -7,7 +7,7 @@ export const Navbar = () => {
     { path: "/layout-api", label: "Layout API" },
   ];
   return (
-    <nav className="w-full flex flex-row justify-center items-center my-4">
+    <nav className="w-full flex flex-row justify-center items-center my-8">
       <ul className="flex flex-row gap-4">
         {navbarUrls.map((url, index) => (
           <li key={index}>

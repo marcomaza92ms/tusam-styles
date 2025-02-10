@@ -15,9 +15,10 @@ export default function Index() {
       <header>
         <Navbar />
       </header>
-      <main className="content">
+      <main className="content gap-8">
         <h1>Tusam Styles</h1>
         <h2>Behold!, for the magic you are about to see</h2>
+        <img src="/magic.gif" alt="" />
       </main>
       <Footer />
     </>

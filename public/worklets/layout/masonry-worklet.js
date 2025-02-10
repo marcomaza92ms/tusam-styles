@@ -1,27 +1,24 @@
+// eslint-disable-next-line no-undef
 registerLayout(
   "masonry",
   class {
     static get inputProperties() {
-      return ["--padding", "--columns"];
+      return ["--gap", "--columns"];
     }
 
-    async intrinsicSizes() {
-      /* TODO implement :) */
-    }
+    async intrinsicSizes() {}
     async layout(children, edges, constraints, styleMap) {
       const inlineSize = constraints.fixedInlineSize;
 
-      const padding = parseInt(styleMap.get("--padding").toString());
+      const gap = parseInt(styleMap.get("--gap").toString());
       const columnValue = styleMap.get("--columns").toString();
 
-      // We also accept 'auto', which will select the BEST number of columns.
       let columns = parseInt(columnValue);
       if (columnValue == "auto" || !columns) {
-        columns = Math.ceil(inlineSize / 350); // MAGIC NUMBER \o/.
+        columns = Math.ceil(inlineSize / 350);
       }
 
-      // Layout all children with simply their column size.
-      const childInlineSize = (inlineSize - (columns + 1) * padding) / columns;
+      const childInlineSize = (inlineSize - (columns + 1) * gap) / columns;
       const childFragments = await Promise.all(
         children.map((child) => {
           return child.layoutNextFragment({ fixedInlineSize: childInlineSize });
@@ -31,7 +28,6 @@ registerLayout(
       let autoBlockSize = 0;
       const columnOffsets = Array(columns).fill(0);
       for (let childFragment of childFragments) {
-        // Select the column with the least amount of stuff in it.
         const min = columnOffsets.reduce(
           (acc, val, idx) => {
             if (!acc || val < acc.val) {
@@ -43,16 +39,12 @@ registerLayout(
           { val: +Infinity, idx: -1 }
         );
 
-        childFragment.inlineOffset =
-          padding + (childInlineSize + padding) * min.idx;
-        childFragment.blockOffset = padding + min.val;
+        childFragment.inlineOffset = gap + (childInlineSize + gap) * min.idx;
+        childFragment.blockOffset = gap + min.val;
 
         columnOffsets[min.idx] =
           childFragment.blockOffset + childFragment.blockSize;
-        autoBlockSize = Math.max(
-          autoBlockSize,
-          columnOffsets[min.idx] + padding
-        );
+        autoBlockSize = Math.max(autoBlockSize, columnOffsets[min.idx] + gap);
       }
 
       return { autoBlockSize, childFragments };
