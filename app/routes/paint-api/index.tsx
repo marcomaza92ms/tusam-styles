@@ -1,9 +1,10 @@
-import { Footer } from "~/components/footer/footer";
-import { Navbar } from "~/components/navbar/navbar";
-
-import "./index.css";
 import { useLocation } from "react-router";
 import { useEffect } from "react";
+import { Footer } from "~/components/footer/footer";
+import { Navbar } from "~/components/navbar/navbar";
+import { mondrianWorklet } from "css-houdini-snippets";
+
+import "./index.css";
 
 export default function PaintAPI() {
   const location = useLocation();
@@ -12,8 +13,8 @@ export default function PaintAPI() {
     if (CSS && CSS.paintWorklet) {
       // @ts-expect-error: CSS.layoutWorklet is not defined in TypeScript types
       CSS.paintWorklet.addModule("/worklets/paint/border-worklet.js");
-      // @ts-expect-error: CSS.layoutWorklet is not defined in TypeScript typess
-      CSS.paintWorklet.addModule("/worklets/paint/mondrian-worklet.js");
+      mondrianWorklet();
+      /* CSS.paintWorklet.addModule("/worklets/paint/mondrian-worklet.js"); */
     }
   }, [location]);
   return (

@@ -2,7 +2,6 @@ import { useLocation } from "react-router";
 import { useEffect } from "react";
 import { Footer } from "~/components/footer/footer";
 import { Navbar } from "~/components/navbar/navbar";
-
 import "./index.css";
 
 export default function LayoutAPI() {
