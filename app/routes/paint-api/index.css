@@ -1,5 +1,17 @@
 /* Paint API */
 
+@property --cell-count {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --border-width {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+
 .my-precious-div {
   --border-radius-reverse: 10;
   --some-color: darkred;
@@ -14,22 +26,10 @@
 @supports (border-image: paint(border-radius-reverse)) {
   .my-precious-div {
     --border-radius-reverse: 20;
-    --border-radius-reverse-color: darkorange;
+    --border-radius-reverse-color: rebeccapurple;
     border-image: paint(border-radius-reverse);
     border-image-slice: var(--border-radius-reverse);
   }
-}
-
-@property --cell-count {
-  syntax: "<integer>";
-  inherits: false;
-  initial-value: 0;
-}
-
-@property --border-width {
-  syntax: "<integer>";
-  inherits: false;
-  initial-value: 0;
 }
 
 .my-mondrian {

@@ -2,7 +2,7 @@ import { useLocation } from "react-router";
 import { useEffect } from "react";
 import { Footer } from "~/components/footer/footer";
 import { Navbar } from "~/components/navbar/navbar";
-import { mondrianWorklet } from "css-houdini-snippets";
+/* import { mondrianWorklet } from "css-houdini-snippets"; */
 
 import "./index.css";
 
@@ -13,8 +13,9 @@ export default function PaintAPI() {
     if (CSS && CSS.paintWorklet) {
       // @ts-expect-error: CSS.layoutWorklet is not defined in TypeScript types
       CSS.paintWorklet.addModule("/worklets/paint/border-worklet.js");
-      mondrianWorklet();
-      /* CSS.paintWorklet.addModule("/worklets/paint/mondrian-worklet.js"); */
+      /* mondrianWorklet(); */
+      // @ts-expect-error: CSS.layoutWorklet is not defined in TypeScript types
+      CSS.paintWorklet.addModule("/worklets/paint/mondrian-worklet.js");
     }
   }, [location]);
   return (

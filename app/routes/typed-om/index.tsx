@@ -12,12 +12,12 @@ export default function TypedOM() {
     if (elementRef.current) {
       /* By Element */
       /* elementRef.current.style.width = "300px"; */
-      /* console.log(elementRef.current.style.width); */
-      /* console.log(typeof elementRef.current.style.width); */
+      /* console.log('elementRef', elementRef.current.style.width); */
+      /* console.log('typeof elementRef', typeof elementRef.current.style.width); */
       /* elementRef.current.style.setProperty("--some-color", "green"); */
       /* elementRef.current.style.setProperty("width", "300px"); */
-      /* console.log(elementRef.current.style.getPropertyValue("--some-color")); */
-      /* console.log(elementRef.current.style.getPropertyValue("width")); */
+      /* console.log('elementRef css variable', elementRef.current.style.getPropertyValue("--some-color")); */
+      /* console.log('elementRef seProperty', elementRef.current.style.getPropertyValue("width")); */
       /* By Global Document */
       /* console.log(document.styleSheets); */
       /* console.log(typeof document.documentElement.style.width); */
@@ -31,15 +31,15 @@ export default function TypedOM() {
   /* Typed OM */
   useEffect(() => {
     if (elementRef.current) {
-      /* console.log(elementRef.current.computedStyleMap()); */
-      /* console.log(elementRef.current.attributeStyleMap); */
+      /* console.log('computedStyleMap', elementRef.current.computedStyleMap()); */
+      /* console.log('attributeStyleMap' elementRef.current.attributeStyleMap); */
       /* const elementWidth = elementRef.current.computedStyleMap().get("width"); */
       /* elementRef.current.attributeStyleMap.set("--some-color", "green"); */
       /* const { value, unit } = elementWidth; */
-      /* console.log(value, unit); */
+      /* console.log('elementWidth', value, unit); */
       /* const operation = new CSSMathSum(CSS[unit](value), CSS.px(42)).toString(); */
       /* elementRef.current.attributeStyleMap.set("--custom-width", operation); */
-      /* console.log(operation, typeof operation); */
+      /* console.log('operation', operation, typeof operation); */
     }
   });
 

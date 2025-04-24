@@ -32,6 +32,7 @@ export default function LayoutAPI() {
           <div className="my-precious-div">
             <p className="relative z-50">Wololo!!!</p>
             <div className="relative bg-slate-500 h-[100px] w-[100px]"></div>
+            <div className="relative bg-green-500 h-[50px] w-[50px]"></div>
           </div>
         </section>
         <section className="my-8">

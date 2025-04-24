@@ -1,8 +1,8 @@
 /* Typed OM */
 
-/* :root {
+:root {
   --some-color: ;
-} */
+}
 
 .my-precious-div {
   --some-color: darkblue;
